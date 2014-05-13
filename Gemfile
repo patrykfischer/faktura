@@ -42,6 +42,12 @@ gem 'decent_exposure'
 #pry
 gem 'pry-rails', :group => :development
 
+#bootstrap
+gem 'twitter-bootstrap-rails'
+
+gem "therubyracer"
+gem "less-rails"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

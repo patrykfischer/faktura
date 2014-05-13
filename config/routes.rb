@@ -2,8 +2,8 @@ Faktura::Application.routes.draw do
 
   resources :users
   resources :companies
-  resources :logins
+  resources :sessions
 
-  get "logout" => "logins#destroy"
+  get "logout" => "sessions#destroy"
   root to: 'users#index'
 end

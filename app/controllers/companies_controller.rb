@@ -3,8 +3,6 @@ class CompaniesController < ApplicationController
 	before_action :require_login
 
 	def create
-		company = Company.new(company_params)
-		binding.pry
 		company.user_id = @user_id
 		if company.save
 			redirect_to root_path, notice: "Save Complete"
@@ -21,7 +19,7 @@ class CompaniesController < ApplicationController
 
 	def require_login
 		if !session[:user_id]
-			redirect_to logins_path, notice: "Musisz być zalogowany !!"
+			redirect_t new_session_path, notice: "Musisz być zalogowany !!"
 		else
 			@user_id = session[:user_id]
 		end

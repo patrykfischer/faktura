@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	expose(:user)
+	expose(:user, attributes: :user_params)
 
 	def create
 		user = User.create(user_params)
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
 	def require_login
 		if !session[:user_id]
-			redirect_to logins_path, notice: "Musisz być zalogowany !!"
+			redirect_to new_session_path, notice: "Musisz być zalogowany !!"
 		else
 			@user_id = session[:user_id]
 		end
