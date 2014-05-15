@@ -1,9 +1,10 @@
 class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
+  before_action :require_login
 
   def create
     if invoice.save
-      session[:user_id] = user.id
+      invoice.user_id = @user_id
       render action: 'index'
     else
       render action: 'new'
@@ -17,7 +18,7 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).premit(:number_of_invoice, :date_of_sold, :data_of_sold, :data_build, :method_of_paymant, :id_own_company, :id_invoice_company)
+    params.require(:invoice).permit(:number_of_invoice, :data_of_sold, :data_build, :method_of_payment, :id_own_company, :id_invoice_company)
   end
 
   def require_login
