@@ -1,7 +1,6 @@
 class Company < ActivRecord::Base
   validates :company_name, :nip, :place_of_taxes, :city, :street, :zip_code, :phone_number,
     :bank, :account_number,  presence: true
-  validates :company_name, uniqueness: true
   validates_format_of :nip,
     uniqueness: true, with: /\A[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}\Z/,
     message: "NIP powinien się składać z cyfr w formacie xxx-xxx-xx-xx"
