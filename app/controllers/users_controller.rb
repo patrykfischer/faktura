@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 	expose(:user, attributes: :user_params)
 
 	def create
-		user = User.create(user_params)
 		if user.save
 			session[:user_id] = user.id
 			render action: 'index'
