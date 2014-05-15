@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411153316) do
+ActiveRecord::Schema.define(version: 20140515161201) do
 
   create_table "companies", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20140411153316) do
     t.string   "bank"
     t.string   "account_number"
     t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoices", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "number_of_invoice"
+    t.date     "data_of_sold"
+    t.date     "data_build"
+    t.string   "method_of_payment"
+    t.integer  "id_own_company"
+    t.integer  "id_invoice_company"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
