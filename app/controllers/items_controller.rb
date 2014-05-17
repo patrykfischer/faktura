@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  expose(:items, attributes: :items_params)
+  expose(:item, attributes: :items_params)
 
   def create
     if item.save
