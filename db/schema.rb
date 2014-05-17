@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515161201) do
+ActiveRecord::Schema.define(version: 20140516232510) do
 
   create_table "companies", force: true do |t|
     t.integer  "user_id"
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(version: 20140515161201) do
     t.string   "method_of_payment"
     t.integer  "id_own_company"
     t.integer  "id_invoice_company"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.integer  "id_faktury"
+    t.string   "name_of_service"
+    t.string   "pkwiu"
+    t.integer  "qty"
+    t.integer  "unit"
+    t.float    "unit_net_price"
+    t.float    "total_net_price"
+    t.float    "vat_rate"
+    t.float    "vat_amount"
+    t.float    "total_gross_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
