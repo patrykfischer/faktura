@@ -1,5 +1,6 @@
 class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
+  expose(:item, attributes: :item_params)
   before_action :require_login
 
   def create
@@ -19,6 +20,10 @@ class InvoicesController < ApplicationController
 
   def invoice_params
     params.require(:invoice).permit(:number_of_invoice, :data_of_sold, :data_build, :method_of_payment, :id_own_company, :id_invoice_company)
+  end
+
+  def item_params
+    params.require(:item).permit(:name_of_service, :qty, :unit, :unit_net_price)
   end
 
   def require_login
