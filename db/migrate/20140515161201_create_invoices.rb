@@ -1,7 +1,7 @@
 class CreateInvoices < ActiveRecord::Migration
   def change
     create_table :invoices do |t|
-      t.belongs_to :user
+      t.integer :user_id
       t.integer :number_of_invoice
       t.date :data_of_sold
       t.date :data_build

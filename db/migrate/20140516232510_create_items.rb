@@ -1,7 +1,7 @@
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
-      t.integer :id_invoice
+      t.integer :invoice_id
       t.string  :name_of_service
       t.string  :pkwiu
       t.integer :qty

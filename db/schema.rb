@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140516232510) do
   end
 
   create_table "items", force: true do |t|
-    t.integer  "id_invoice"
+    t.integer  "invoice_id"
     t.string   "name_of_service"
     t.string   "pkwiu"
     t.integer  "qty"
