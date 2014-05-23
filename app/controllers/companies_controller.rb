@@ -3,12 +3,15 @@ class CompaniesController < ApplicationController
 	before_action :require_login
 
 	def create
-		company.user_id = @user_id
 		if company.save
 			redirect_to root_path, notice: "Save Complete"
 		else
 			render :new
 		end
+	end
+
+	def new
+		company = @user.companies.new(company_params)
 	end
 
 	private
@@ -21,7 +24,7 @@ class CompaniesController < ApplicationController
 		if !session[:user_id]
 			redirect_t new_session_path, notice: "Musisz być zalogowany !!"
 		else
-			@user_id = session[:user_id]
+			@user = User.find_by(id: session[:user_id])
 		end
 	end
 end
