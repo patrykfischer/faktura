@@ -1,19 +1,18 @@
 class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
-  expose(:item, attributes: :item_params)
   before_action :require_login
 
   def create
+    invoice.user = @user
     if invoice.save
-      invoice.user_id = @user_id
-      render action: 'index'
+      redirect_to invoices_path
     else
       render action: 'new'
     end
   end
 
   def index
-    require_login
+    @invoices = Invoice.where(user_id: @user.id)
   end
 
   private
@@ -22,15 +21,4 @@ class InvoicesController < ApplicationController
     params.require(:invoice).permit(:number_of_invoice, :data_of_sold, :data_build, :method_of_payment, :id_own_company, :id_invoice_company)
   end
 
-  def item_params
-    params.require(:item).permit(:name_of_service, :qty, :unit, :unit_net_price)
-  end
-
-  def require_login
-    if !session[:user_id]
-      redirect_to new_session_path, notice: "Musisz być zalogowany !!"
-    else
-      @user_id = session[:user_id]
-    end
-  end
 end
