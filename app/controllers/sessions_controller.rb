@@ -3,14 +3,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: user_params[:username])
-    #binding.pry
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: "Zalogowany"
+      redirect_to root_path, notice: 'Zalogowany'
     else
-      flash.now[:alert] = "Błędne hasło bądź nazwa użytkownika"
+      flash.now[:alert] = 'Błędne hasło bądź nazwa użytkownika'
       render action: 'new'
-      #binding.pry
     end
   end
 
