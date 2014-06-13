@@ -3,15 +3,7 @@ Invoice
   = t.input :number_of_invoice
   = t.input :data_of_sold
   = t.input :data_build
-  = t.input :method_of_payment
-  = t.input :id_own_company
-  = t.input :id_invoice_company
+  = t.input :method_of_payment, collection: ["Gotówka", "Przelew 7 dni", "Karta"], prompt: "Wybierz"
+  = t.input :id_own_company, collection: Company.all(order: 'id'), prompt: "Wybierz", label_method: :company_name
+  = t.input :id_invoice_company, collection: Company.all(order: 'id'), prompt: "Wybierz", label_method: :company_name
   = t.button :submit
-
-Items
-= simple_form_for item do |f|
-  = f.input :name_of_service
-  = f.input :qty
-  = f.input :unit
-  = f.input :unit_net_price
-  = f.button :submit
