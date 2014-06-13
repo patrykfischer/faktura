@@ -1,8 +1,8 @@
 - flash.each do |name, msg|
   = msg
 = simple_form_for :user, url: sessions_path do |f|
-  = f.input :username
-  = f.input :password
+  = f.input :username, label: 'nazwa użytkownika'
+  = f.input :password, label: 'hasło'
   = f.button :submit
 
 = link_to "New User", new_user_path
