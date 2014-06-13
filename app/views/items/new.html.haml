@@ -1,5 +1,6 @@
 = simple_form_for item do |f|
   = f.input :name_of_service, label: 'Nazwa Pozycji'
+  = f.input :pkwiu, label: 'PKWIU'
   = f.input :qty, label: 'Ilość'
   = f.input :unit, collection: ['mb','m2','m3','kg','cm','szt.'], prompt: 'Wybierz jednostkę!', label:'Jednostka'
   = f.input :unit_net_price, label:'Cena jednostkowa'
