@@ -1,0 +1,15 @@
+%table
+  %tr
+    %th Numer Faktury
+    %th Sprzedawca
+    %th Nabywca
+  - @invoices.each do |invoice|
+    %tr
+      %td
+        = invoice.number_of_invoice
+      %td
+        = invoice.id_own_company
+      %td
+        = invoice.id_invoice_company
+      %td
+        = link_to 'nowa pozycja faktury', new_items_path(:invoice_id => invoice.id)
