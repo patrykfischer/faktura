@@ -1,0 +1,33 @@
+%table
+  %tr
+    %th Nazwa Usługi
+    %th PKWIU
+    %th Ilość szt.
+    %th Jednostka
+    %th Cena jednostkowa Netto
+    %th Całkowita cena netto
+    %th Stawka VAT
+    %th Kwota Vat
+    %th Wartość Brutto
+  - @items.each do |item|
+    %tr
+      %td
+        = item.name_of_service
+      %td
+        = item.pkwiu
+      %td
+        = item.qty
+      %td
+        = item.unit
+      %td
+        = item.unit_net_price
+      %td
+        = item.total_net_price
+      %td
+        = item.vat_rate
+      %td
+        = item.vat_amount
+      %td
+        = item.total_gross_price
+
+
