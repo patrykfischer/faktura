@@ -14,4 +14,5 @@ class Company < ActiveRecord::Base
 	validates_format_of :phone_number,
 		with: /\A([0-9]{3}-[0-9]{3}-[0-9]{3}|[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2})\Z/,
 		message: "Numer telefonu powinien składać się z samych cyfr i być w formacie  xx-xxx-xx-xx lub xxx-xxx-xxx"
+	validates_presence_of :user
 end
