@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string  :name_of_service
       t.string  :pkwiu
       t.integer :qty
-      t.integer :unit
+      t.string :unit
       t.float   :unit_net_price
       t.float   :total_net_price
       t.float   :vat_rate
