@@ -1,17 +1,19 @@
 class ItemsController < ApplicationController
   expose(:item, attributes: :item_params)
   before_action :require_login
+  before_action :current_invoice
 
   def create
+    item.invoice_id = @@current_invoice.id
     if item.save
-      render action: 'index'
+      redirect_to  items_path
     else
       render action: 'new'
     end
   end
 
-  def new
-    item = invoice.items.new(item_params)
+  def index
+    @items = Item.where(invoice_id: @@current_invoice.id)
   end
 
   private
@@ -20,14 +22,12 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name_of_service, :qty, :unit, :unit_net_price)
   end
 
-  def require_login
-    if !session[:user_id]
-      redirect_to new_session_path, notice: "Musisz być zalogowany !!"
+  def current_invoice
+    if params[:invoice_id]
+      @@current_invoice = Invoice.find_by(id: params[:invoice_id])
     else
-      binding.pry
-      @invoice = Invoice.where(user_id: session[:user_id]).last
-
-      #@user_id = session[:user_id]
+      @@current_invoice
     end
   end
+
 end
