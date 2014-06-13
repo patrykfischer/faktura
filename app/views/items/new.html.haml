@@ -3,4 +3,5 @@
   = f.input :qty
   = f.input :unit, collection: ["mb","m2","m3","kg","cm","szt."], prompt: "Wybierz jednostkę!"
   = f.input :unit_net_price
+  = f.input :vat_rate, collection: [0.08, 0.23]
   = f.button :submit
