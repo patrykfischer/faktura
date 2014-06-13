@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
   def create
     item.invoice_id = @@current_invoice.id
     if item.save
-      redirect_to  items_path
+      count_value
+      redirect_to  items_path if item.save
     else
       render action: 'new'
     end
@@ -19,7 +20,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name_of_service, :qty, :unit, :unit_net_price)
+    params.require(:item).permit(:name_of_service, :qty, :unit, :unit_net_price, :vat_rate, :pkwiu)
   end
 
   def current_invoice
@@ -28,6 +29,12 @@ class ItemsController < ApplicationController
     else
       @@current_invoice
     end
+  end
+
+  def count_value
+    item.total_net_price = item.qty * item.unit_net_price
+    item.vat_amount = item.total_net_price * item.vat_rate
+    item.total_gross_price = item.total_net_price + item.vat_amount
   end
 
 end
