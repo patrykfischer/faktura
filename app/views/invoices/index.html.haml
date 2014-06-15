@@ -12,4 +12,4 @@
       %td
         = invoice.id_invoice_company
       %td
-        = link_to 'nowa pozycja faktury', new_items_path(:invoice_id => invoice.id)
+        = link_to 'nowa pozycja faktury', new_invoice_item_path(invoice.id)

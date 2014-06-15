@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
     item.invoice_id = @@current_invoice.id
     if item.save
       count_value
-      redirect_to  items_path if item.save
+      redirect_to  invoice_items_path if item.save
     else
       render action: 'new'
     end
