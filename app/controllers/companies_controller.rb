@@ -11,6 +11,15 @@ class CompaniesController < ApplicationController
 		end
 	end
 
+	def index
+		@companies = Company.all
+	end
+
+	def update
+		company.save
+		redirect_to companies_path
+	end
+
 	private
 
 	def company_params
