@@ -1,0 +1,30 @@
+%table
+  %tr
+    %th Nazwa Firmy
+    %th NIP
+    %th Kraj
+    %th Miasto
+    %th Ulica
+    %th Kod pocztowy
+    %th Numer telefonu
+  - @companies.each do |company|
+    %tr
+      %td
+        = company.company_name
+      %td
+        = company.nip
+      %td
+        = company.place_of_taxes
+      %td
+        = company.city
+      %td
+        = company.street
+      %td
+        = company.zip_code
+      %td
+        = company.phone_number
+      %td
+        = link_to 'edytuj', edit_company_path(company.id)
+
+= link_to 'nowa firma', new_company_path
+= link_to 'powrót', users_path
