@@ -13,3 +13,6 @@
         = invoice.id_invoice_company
       %td
         = link_to 'nowa pozycja faktury', new_invoice_item_path(invoice.id)
+
+= link_to "Nowa Faktura", new_invoice_path
+= link_to 'powrót', users_path
