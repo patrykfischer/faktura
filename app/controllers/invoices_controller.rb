@@ -13,6 +13,7 @@ class InvoicesController < ApplicationController
 
   def index
     @invoices = Invoice.where(user_id: @user.id)
+    @company = Company.all
   end
 
   private
