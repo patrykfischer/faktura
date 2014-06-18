@@ -4,6 +4,7 @@ class InvoicesController < ApplicationController
 
   def create
     invoice.user = @user
+    binding.pry
     if invoice.save
       redirect_to invoices_path
     else
@@ -11,15 +12,19 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def new
+    @company = Company.all
+  end
+
   def index
     @invoices = Invoice.where(user_id: @user.id)
-    @company = Company.all
+    @companies = Company.all
   end
 
   private
 
   def invoice_params
-    params.require(:invoice).permit(:number_of_invoice, :data_of_sold, :data_build, :method_of_payment, :id_own_company, :id_invoice_company)
+    params.require(:invoice).permit(:number_of_invoice, :data_of_sold, :data_build, :method_of_payment, :own_company_id, :other_company_id)
   end
 
 end

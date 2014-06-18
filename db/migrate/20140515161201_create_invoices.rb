@@ -6,8 +6,8 @@ class CreateInvoices < ActiveRecord::Migration
       t.date :data_of_sold
       t.date :data_build
       t.string :method_of_payment
-      t.integer :id_own_company
-      t.integer :id_invoice_company
+      t.integer :own_company_id
+      t.integer :other_company_id
 
       t.timestamps
     end

@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20140516232510) do
     t.date     "data_of_sold"
     t.date     "data_build"
     t.string   "method_of_payment"
-    t.integer  "id_own_company"
-    t.integer  "id_invoice_company"
+    t.integer  "own_company_id"
+    t.integer  "other_company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,10 +8,9 @@
       %td
         = invoice.number_of_invoice
       %td
-        - company_name = @company.find_by(id: invoice.id_own_company)
-        = company_name.company_name
+        - binding.pry
       %td
-        - company_name = @company.find_by(id: invoice.id_invoice_company)
+        - company_name = @companies.find_by(id: invoice.other_company_id)
         = company_name.company_name
       %td
         = link_to 'nowa pozycja faktury', new_invoice_item_path(invoice.id)
