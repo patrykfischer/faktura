@@ -1,10 +1,10 @@
 class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
+  expose(:companies)
   before_action :require_login
 
   def create
     invoice.user = @user
-    binding.pry
     if invoice.save
       redirect_to invoices_path
     else
@@ -12,13 +12,8 @@ class InvoicesController < ApplicationController
     end
   end
 
-  def new
-    @company = Company.all
-  end
-
   def index
     @invoices = Invoice.where(user_id: @user.id)
-    @companies = Company.all
   end
 
   private

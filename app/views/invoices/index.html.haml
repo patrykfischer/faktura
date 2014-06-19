@@ -5,15 +5,10 @@
     %th Nabywca
   - @invoices.each do |invoice|
     %tr
-      %td
-        = invoice.number_of_invoice
-      %td
-        - binding.pry
-      %td
-        - company_name = @companies.find_by(id: invoice.other_company_id)
-        = company_name.company_name
-      %td
-        = link_to 'nowa pozycja faktury', new_invoice_item_path(invoice.id)
+      %td= invoice.number_of_invoice
+      %td= invoice.own_company.company_name
+      %td= invoice.other_company.company_name
+      %td= link_to 'nowa pozycja faktury', new_invoice_item_path(invoice.id)
 
 = link_to "Nowa Faktura", new_invoice_path
 = link_to 'powrót', users_path
