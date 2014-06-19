@@ -3,7 +3,7 @@ Invoice
   = t.input :number_of_invoice, label: 'numer faktury'
   = t.input :data_of_sold, label: 'data sprzedaży'
   = t.input :data_build, label: 'data wystawienia'
-  = t.input :method_of_payment, collection: ['Gotówka', 'Przelew 7 dni', 'Karta'], prompt: 'Wybierz', label:'metoda płatności'
+  = t.input :method_of_payment, collection: Invoice::Payment_method, prompt: 'Wybierz', label:'metoda płatności'
   = t.input :own_company_id, collection: companies, prompt: 'Wybierz', label_method: :company_name, label:'sprzedawca'
   = t.input :other_company_id, collection: companies, prompt: 'Wybierz', label_method: :company_name, label: 'nabywca'
   = t.button :submit

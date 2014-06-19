@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   def create
     item.invoice_id = params[:invoice_id]
     if item.save
-      count_value
+      Item.count_value(item)
       redirect_to  invoice_items_path if item.save
     else
       render action: 'new'
@@ -21,11 +21,4 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name_of_service, :qty, :unit, :unit_net_price, :vat_rate, :pkwiu)
   end
-
-  def count_value
-    item.total_net_price = item.qty * item.unit_net_price
-    item.vat_amount = item.total_net_price * item.vat_rate
-    item.total_gross_price = item.total_net_price + item.vat_amount
-  end
-
 end

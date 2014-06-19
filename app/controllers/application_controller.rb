@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    if !session[:user_id]
+    unless session[:user_id]
       redirect_to new_session_path, notice: "Musisz być zalogowany !!"
     else
       @user = User.find_by(id: session[:user_id])
