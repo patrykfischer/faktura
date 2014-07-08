@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   expose(:item, attributes: :item_params)
+  expose(:items) {Item.where(invoice_id: params[:invoice_id])}
   before_action :require_login
 
   def create
@@ -10,10 +11,6 @@ class ItemsController < ApplicationController
     else
       render action: 'new'
     end
-  end
-
-  def index
-    @items = Item.where(invoice_id: params[:invoice_id])
   end
 
   private

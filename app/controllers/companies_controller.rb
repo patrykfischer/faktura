@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
 	expose(:company, attributes: :company_params)
+	expose(:companies) {Company.where(user_id: @user.id)}
 	before_action :require_login
 
 	def create
@@ -9,10 +10,6 @@ class CompaniesController < ApplicationController
 		else
 			render :new
 		end
-	end
-
-	def index
-		@companies = Company.all
 	end
 
 	def update

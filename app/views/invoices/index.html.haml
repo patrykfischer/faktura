@@ -3,7 +3,7 @@
     %th Numer Faktury
     %th Sprzedawca
     %th Nabywca
-  - @invoices.each do |invoice|
+  - invoices.each do |invoice|
     %tr
       %td= invoice.number_of_invoice
       %td= invoice.own_company.company_name
