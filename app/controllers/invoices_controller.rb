@@ -1,7 +1,7 @@
 class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
-  expose(:companies){Company.where(user_id: @user.id)}
-  expose(:invoices){Invoice.where(user_id: @user.id)}
+  expose(:companies){@user.companies)}
+  expose(:invoices){@user.invoices)}
   before_action :require_login
 
   def create
