@@ -1,8 +1,7 @@
-- flash.each do |name, msg|
-  = msg
+= render partial: 'new'
 = simple_form_for :user, url: sessions_path do |f|
   = f.input :username, label: 'nazwa użytkownika'
   = f.input :password, label: 'hasło'
-  = f.button :submit
+  = f.button :submit, "Log in"
 
 = link_to "New User", new_user_path
