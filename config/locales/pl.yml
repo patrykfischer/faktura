@@ -62,12 +62,13 @@ pl:
     logout: 'Wyloguj'
     username: 'Nazwa użytkownika'
     password: 'Hasło'
-    confirm_password: 'Potwierdzenie hasła'
+    confirm_password: 'Potwierdzenie '
 
   date:
     order:
       - :year
       - :month
       - :day
+    month_names: [Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
 
 
