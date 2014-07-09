@@ -1,14 +1,14 @@
 %table
   %tr
-    %th Nazwa Usługi
-    %th PKWIU
-    %th Ilość szt.
-    %th Jednostka
-    %th Cena jednostkowa Netto
-    %th Całkowita cena netto
-    %th Stawka VAT
-    %th Kwota Vat
-    %th Wartość Brutto
+    %th= t('items.name_of_service')
+    %th= t('items.pkwiu')
+    %th= t('items.qty')
+    %th= t('items.unit')
+    %th= t('items.unit_net_price')
+    %th= t('items.total_net_price')
+    %th= t('items.vat_rate')
+    %th= t('items.vat_amount')
+    %th= t('items.total_gross_price')
   - items.each do |item|
     %tr
       %td= item.name_of_service
@@ -21,6 +21,6 @@
       %td= item.vat_amount
       %td= item.total_gross_price
 
-= link_to 'powrót', invoices_path
+= link_to t('items.return'), invoices_path
 
 

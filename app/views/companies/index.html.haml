@@ -1,12 +1,12 @@
 %table
   %tr
-    %th Nazwa Firmy
-    %th NIP
-    %th Kraj
-    %th Miasto
-    %th Ulica
-    %th Kod pocztowy
-    %th Numer telefonu
+    %th= t('companies.name')
+    %th= t('companies.nip')
+    %th= t('companies.country')
+    %th= t('companies.city')
+    %th= t('companies.street')
+    %th= t('companies.zip_code')
+    %th= t('companies.phone_number')
   - companies.each do |company|
     %tr
       %td= company.company_name
@@ -16,7 +16,7 @@
       %td= company.street
       %td= company.zip_code
       %td= company.phone_number
-      %td= link_to 'edytuj', edit_company_path(company.id)
+      %td= link_to t('companies.edit'), edit_company_path(company.id)
 
-= link_to 'nowa firma', new_company_path
-= link_to 'powrót', users_path
+= link_to t('companies.new_company'), new_company_path
+= link_to t('companies.return'), users_path

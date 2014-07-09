@@ -1,9 +1,9 @@
 Invoice
 = simple_form_for invoice do |t|
-  = t.input :number_of_invoice, label: 'numer faktury'
-  = t.input :data_of_sold, label: 'data sprzedaży'
-  = t.input :data_build, label: 'data wystawienia'
-  = t.input :method_of_payment, collection: Invoice::Payment_method, prompt: 'Wybierz', label:'metoda płatności'
-  = t.input :own_company_id, collection: companies, prompt: 'Wybierz', label_method: :company_name, label:'sprzedawca'
-  = t.input :other_company_id, collection: companies, prompt: 'Wybierz', label_method: :company_name, label: 'nabywca'
+  = t.input :number_of_invoice, label: t('invoices.number_of_invoice')
+  = t.input :data_of_sold, label: t('invoices.date_of_sold')
+  = t.input :data_build, label: t('invoices.date_build')
+  = t.input :method_of_payment, collection: Invoice::Payment_method, prompt: t('invoices.select'), label:t('invoices.method_of_payment')
+  = t.input :own_company_id, collection: companies, prompt: t('invoices.select'), label_method: :company_name, label:t('invoices.seller')
+  = t.input :other_company_id, collection: companies, prompt: t('invoices.select'), label_method: :company_name, label: t('buyer')
   = t.button :submit

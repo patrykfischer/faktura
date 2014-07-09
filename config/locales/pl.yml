@@ -1,0 +1,73 @@
+pl:
+  application:
+    must_log_in: 'Musisz być zalogowany!'
+  companies:
+    name: 'Nazwa Firmy'
+    nip: 'NIP'
+    country: 'Kraj'
+    city: 'Miasto'
+    street: 'Ulica'
+    zip_code: 'Kod pocztowy'
+    phone_number: 'Numer telefonu'
+    edit: 'Edytuj'
+    new_company: 'Nowa Firma'
+    return: 'Powrót'
+    save_completed: 'Zapis udany!'
+    validation:
+      nip: 'NIP powinien się składać z cyfr w formacie xxx-xxx-xx-xx'
+      zip_code: 'Kod pocztowy powinien składać się z samych cyfr w formacie xx-xxx'
+      phone_number: 'Numer telefonu powinien składać się z samych cyfr i być w formacie  xx-xxx-xx-xx lub xxx-xxx-xxx'
+  invoices:
+    uniqueness_message: 'Faktura z tym numerem jest już wystawiona!'
+    cash: 'Gotówka'
+    transfer: 'Przelew 7 dni'
+    credit_card: 'Karta płatnicza'
+    number_of_invoice: 'Numer faktury'
+    date_of_sold: 'Data sprzedaży'
+    date_build: 'Data wystawienia'
+    method_of_payment: 'Metoda płatnosci'
+    seller: 'Sprzedawca'
+    buyer: 'Kupujący'
+    select: 'Wybierz'
+    new_item_invoice: 'Nowa pozycja faktury'
+    new_invoice: 'Nowa faktura'
+    return: 'Powrót'
+  items:
+    name_of_service: 'Nazwa usługi'
+    pkwiu: 'PKWIU'
+    qty: 'Ilość szt.'
+    qty_new: 'Ilość'
+    unit: 'Jednostka'
+    unit_net_price: 'Cena jednostkowa netto'
+    total_net_price: 'Całkowita cena netto'
+    vat_rate: 'Stawka Vat'
+    vat_amount: 'Kwota Vat'
+    total_gross_price: 'Wartość Brutto'
+    return: 'Powrót'
+    select_unit: 'Wybierz jednostkę!'
+    unit_price: 'Cena jednostkowa'
+  sessions:
+    online: 'Zalogowany'
+    offline: 'Wylogowano poprawnie'
+    incorrect_password: 'Błędne hasło bądź nazwa użytkownika!'
+    username: 'Nazwa użytkownika'
+    password: 'Hasło'
+    create_user: 'Stwórz użytkownika'
+    new_user: 'Nowy użytkownik'
+  users:
+    username_busy: 'Ta nazwa użytkownika jest już zajęta!'
+    application_to_invoices: 'Program do fakturowania'
+    my_companies: 'Moje Firmy'
+    my_invoices: 'Moje Faktury'
+    logout: 'Wyloguj'
+    username: 'Nazwa użytkownika'
+    password: 'Hasło'
+    confirm_password: 'Potwierdzenie hasła'
+
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+
+

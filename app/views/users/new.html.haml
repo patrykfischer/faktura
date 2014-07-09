@@ -1,5 +1,5 @@
 = simple_form_for user do |p|
-	= p.input :username, label: 'nazwa użytkownika'
-	= p.input :password, label: 'hasło'
-	= p.input :password_confirmation, label: 'potwierdzenie hasła'
+	= p.input :username, label: t('users.username')
+	= p.input :password, label: t('users.password')
+	= p.input :password_confirmation, label: t('users.confirm_password')
 	= p.button :submit

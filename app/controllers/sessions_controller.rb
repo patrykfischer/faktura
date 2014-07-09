@@ -5,16 +5,16 @@ class SessionsController < ApplicationController
     user = User.find_by(username: user_params[:username])
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'Zalogowany'
+      redirect_to root_path, notice: t('sessions.online')
     else
-      flash.now[:alert] = 'Błędne hasło bądź nazwa użytkownika'
+      flash.now[:alert] = t('sessions.incorrect_password')
       render action: 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to new_session_path, notice: 'Wylogowano poprawnie'
+    redirect_to new_session_path, notice: t('sessions.offline')
   end
 
   private

@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
   def create
     company.user = @user
     if company.save
-      redirect_to root_path, notice: "Save Complete"
+      redirect_to root_path, notice: t('companies.save_completed')
     else
       render :new
     end
