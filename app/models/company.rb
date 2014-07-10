@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
   belongs_to :user
 
-  validates :company_name, :nip, :place_of_taxes, :city, :street, :zip_code, :phone_number,
+  validates :company_name, :nip, :place_of_taxes, :city, :street, :zip_code, :phone_number, :user_id,
   presence: true
   validates_format_of :nip,
     uniqueness: true, with: /\A[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}\Z/,
