@@ -6,5 +6,7 @@ company = Company.create(user_id: User.first.id, company_name: 'White', nip: '11
 invoice = Invoice.create(user_id: User.first.id, number_of_invoice: Invoice.any? ? Invoice.last.number_of_invoice + 1 : 1,
   data_of_sold: '2014-01-01', data_build: '2014-02-02', method_of_payment: 'Gotówka', own_company_id: Company.first.id,
   other_company_id: Company.last.id)
-item = Item.create(invoice_id: Invoice.first.id, name_of_service: 'Malowanie Fasady', qty: 10,
+item = Item.new(invoice_id: Invoice.first.id, name_of_service: 'Malowanie Fasady', qty: 10,
   unit: 'm2', unit_net_price: 12.99, vat_rate: 0.22)
+item.count_value
+item.save
