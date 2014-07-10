@@ -1,18 +1,13 @@
 require 'spec_helper'
 
 describe Company do
-  before :each do
-    @company = Company.new
-  end
-
-  it 'should not be valid if all record are blank' do
-    @company.should_not be_valid
-    @company.should have(1).error_on(:company_name)
-    @company.should have(2).error_on(:nip)
-    @company.should have(2).error_on(:place_of_taxes)
-    @company.should have(2).error_on(:city)
-    @company.should have(1).error_on(:street)
-    @company.should have(2).error_on(:zip_code)
-    @company.should have(2).error_on(:phone_number)
-  end
+  subject { Company.new() }
+  it { is_expected.to validate_presence_of(:user_id)}
+  it { is_expected.to validate_presence_of(:company_name)}
+  it { is_expected.to validate_presence_of(:nip)}
+  it { is_expected.to validate_presence_of(:place_of_taxes)}
+  it { is_expected.to validate_presence_of(:city)}
+  it { is_expected.to validate_presence_of(:street)}
+  it { is_expected.to validate_presence_of(:zip_code)}
+  it { is_expected.to validate_presence_of(:phone_number)}
 end
