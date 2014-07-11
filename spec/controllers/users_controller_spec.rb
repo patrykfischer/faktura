@@ -18,13 +18,10 @@ describe UsersController do
     it "check right session[user_id]" do
       expect(User.last.id).to eq(session[:user_id])
     end
-
-    it 'check number of user' do
-      count = User.count
-      user = User.new(username: 'asdf', password_confirmation: 'qwer', password: 'qwer')
-      expect(user.save).to eql(true)
-      expect(User.count).to eql(count+1)
+  end
+  describe 'POST #create' do
+    it 'create new user' do
+      expect { post :create, user: create(:user).attributes }.to change(User, :count).by(1)
     end
-
   end
 end

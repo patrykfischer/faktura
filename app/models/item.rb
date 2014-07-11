@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :invoice
-  validates :name_of_service, :qty, :unit, :unit_net_price, :invoice_id, :vat_rate, presence: true
+  validates :name_of_service, :qty, :unit, :unit_net_price, :invoice_id, :vat_rate, :total_net_price,
+  :vat_amount, :total_gross_price, presence: true
   Unit = ['mb','m2','m3','kg','cm','szt.']
 
   def count_value

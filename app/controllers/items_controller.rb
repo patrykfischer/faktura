@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
 
   def create
     item.invoice_id = params[:invoice_id]
-    if item.save
-      item.count_value
+    if item.count_value
       redirect_to  invoice_items_path if item.save
     else
       render action: 'new'
