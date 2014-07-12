@@ -16,7 +16,6 @@ FactoryGirl.define do
     phone_number '11-111-11-11'
   end
 
-
   factory :invoice do
     user_id 1
     number_of_invoice 1
@@ -37,6 +36,15 @@ FactoryGirl.define do
     vat_rate 0.08
     vat_amount 1
     total_gross_price 1
+  end
+
+  factory :item_b do
+    invoice_id 1
+    name_of_service 'asdf'
+    qty 12
+    unit 'm2'
+    unit_net_price 1
+    vat_rate 0.08
   end
 
 end

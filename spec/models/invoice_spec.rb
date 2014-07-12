@@ -9,4 +9,6 @@ describe Invoice do
   it { is_expected.to validate_presence_of(:method_of_payment)}
   it { is_expected.to validate_presence_of(:own_company_id)}
   it { is_expected.to validate_presence_of(:other_company_id)}
+  it { is_expected.to belong_to(:user)}
+  it { is_expected.to have_many(:items)}
 end
