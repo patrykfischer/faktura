@@ -49,7 +49,7 @@ pl:
     incorrect_password: 'Błędne hasło bądź nazwa użytkownika!'
     username: 'Nazwa użytkownika'
     password: 'Hasło'
-    create_user: 'Stwórz użytkownika'
+    new_session: 'Zaloguj'
     new_user: 'Nowy użytkownik'
   users:
     username_busy: 'Ta nazwa użytkownika jest już zajęta!'
@@ -59,7 +59,8 @@ pl:
     logout: 'Wyloguj'
     username: 'Nazwa użytkownika'
     password: 'Hasło'
-    confirm_password: 'Potwierdzenie '
+    confirm_password: 'Potwierdzenie'
+    new_user: 'Stwórz użytkownika'
 
   date:
     order:
