@@ -5,23 +5,37 @@ describe CompaniesController do
     let!(:user){create(:user)}
     before do
       session[:user_id] = user.id
-
     end
 
-      it 'check create last company' do
-        company = Company.new(company_name: 'P', nip: '111-111-11-11', place_of_taxes: 'UK', city: 'London', street: 'new',
-          zip_code: '11-111', phone_number: '11-111-11-11')
-        company.user = user
-        company.save
-        expect(Company.last).to eq(company)
+    describe 'POST #create' do
+      let!(:company){attributes_for(:company)}
+      it 'create new company' do
+        expect { post :create, company: company }.to change(Company, :count).by(1)
       end
     end
 
-  describe 'POST #create' do
-    it 'create new company' do
-      expect { post :create, company: create(:company).attributes }.to change(Company, :count).by(1)
+    describe 'Redirect after create' do
+      it 'Redirect to root_path' do
+        post :create, company: attributes_for(:company)
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    describe 'PUT #update/:id' do
+      it 'Update company' do
+        post :create, company: attributes_for(:company)
+        company = Company.last
+        put :update, id: company.id, company: company.attributes = { company_name: 'pp'}
+        company.save
+        expect(Company.last.company_name).to eq('pp')
+      end
+
+      it 'Redirect to companies_path' do
+        post :create, company: attributes_for(:company)
+        company = Company.last
+        put :update, id: company.id, company: company.attributes = { company_name: 'pp'}
+        expect(response).to redirect_to(companies_path)
+      end
     end
   end
-
-
 end

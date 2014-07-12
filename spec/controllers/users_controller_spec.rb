@@ -10,14 +10,6 @@ describe UsersController do
     it 'returns 200 code' do
       expect(response.status).to eq(200)
     end
-
-    it "check created last user" do
-      expect(User.last).to eq(user)
-    end
-
-    it "check right session[user_id]" do
-      expect(User.last.id).to eq(session[:user_id])
-    end
   end
   describe 'POST #create' do
     it 'create new user' do
