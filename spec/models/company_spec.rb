@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Company do
-  subject { Company.new() }
   it { is_expected.to validate_presence_of(:user_id)}
   it { is_expected.to validate_presence_of(:company_name)}
   it { is_expected.to validate_presence_of(:nip)}

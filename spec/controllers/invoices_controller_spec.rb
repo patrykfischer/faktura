@@ -14,8 +14,8 @@ describe InvoicesController do
       end
     end
 
-    describe 'Redirect after #create' do
-      it('to invoices_path') do
+    describe '#create' do
+      it 'Redirect after #create' do
         post :create, invoice: attributes_for(:invoice)
         expect(response).to redirect_to(invoices_path)
       end

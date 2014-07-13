@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Invoice do
-  subject { Invoice.new() }
   it { is_expected.to validate_presence_of(:user_id)}
   it { is_expected.to validate_presence_of(:number_of_invoice)}
   it { is_expected.to validate_presence_of(:data_of_sold)}

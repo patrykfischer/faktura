@@ -6,7 +6,7 @@ FactoryGirl.define do
   end
 
   factory :company do
-    user
+    user_id 1
     company_name 'P'
     nip '111-111-11-11'
     place_of_taxes 'UK'

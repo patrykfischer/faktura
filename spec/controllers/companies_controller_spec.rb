@@ -14,7 +14,7 @@ describe CompaniesController do
       end
     end
 
-    describe 'Redirect after create' do
+    describe '#create' do
       it 'Redirect to root_path' do
         post :create, company: attributes_for(:company)
         expect(response).to redirect_to(root_path)
@@ -22,17 +22,14 @@ describe CompaniesController do
     end
 
     describe 'PUT #update/:id' do
+      let!(:company){create(:company)}
       it 'Update company' do
-        post :create, company: attributes_for(:company)
-        company = Company.last
         put :update, id: company.id, company: company.attributes = { company_name: 'pp'}
-        company.save
-        expect(Company.last.company_name).to eq('pp')
+        company.reload
+        expect(company.company_name).to eq('pp')
       end
 
       it 'Redirect to companies_path' do
-        post :create, company: attributes_for(:company)
-        company = Company.last
         put :update, id: company.id, company: company.attributes = { company_name: 'pp'}
         expect(response).to redirect_to(companies_path)
       end

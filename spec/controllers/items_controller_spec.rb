@@ -14,7 +14,7 @@ describe ItemsController do
       end
     end
 
-    describe 'Redirect after #create' do
+    describe '#create' do
       it 'Redirect to invoice_items_path' do
         post :create, invoice_id: 1, item: attributes_for(:item)
         expect(response).to redirect_to(invoice_items_path)
