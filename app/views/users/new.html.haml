@@ -1,5 +1,11 @@
-= simple_form_for user do |p|
-  = p.input :username, label: t('users.username')
-  = p.input :password, label: t('users.password')
-  = p.input :password_confirmation, label: t('users.confirm_password')
-  = p.button :submit, t('users.new_user')
+.container
+  .content
+    %h1= t('users.application_to_invoices')
+    = simple_form_for user do |p|
+      = t('users.username')
+      = p.input :username, label: false
+      = t('users.password')
+      = p.input :password, label: false
+      = t('users.confirm_password')
+      = p.input :password_confirmation, label: false
+      = p.button :submit, t('users.new_user'), class: 'btn btn-success btn-block'
