@@ -1,6 +1,6 @@
 .container
-  .logins
-    %h1 Faktura
+  .content
+    %h1= t('users.application_to_invoices')
     = render partial: 'shared/flashes'
     = simple_form_for :user, url: sessions_path do |f|
       = t('sessions.username')
