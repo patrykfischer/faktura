@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   expose(:company, attributes: :company_params)
-  expose(:companies) {@user.companies}
+  expose(:companies) { @user.companies }
   before_action :require_login
 
   def create

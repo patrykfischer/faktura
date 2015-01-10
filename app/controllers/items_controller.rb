@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   expose(:item, attributes: :item_params)
-  expose(:items) {Item.where(invoice_id: params[:invoice_id])}
+  expose(:items) { Item.where(invoice_id: params[:invoice_id]) }
   before_action :require_login
 
   def create
