@@ -1,7 +1,12 @@
-= render partial: 'shared/flashes'
-= simple_form_for :user, url: sessions_path do |f|
-  = f.input :username, label: t('sessions.username')
-  = f.input :password, label: t('sessions.password')
-  = f.button :submit, t('sessions.new_session')
+.container
+  .logins
+    %h1 Faktura
+    = render partial: 'shared/flashes'
+    = simple_form_for :user, url: sessions_path do |f|
+      = t('sessions.username')
+      = f.input :username, label: false
+      = t('sessions.password')
+      = f.input :password, label: false
+      = f.button :submit, t('sessions.new_session'), class: 'btn btn-primary btn-block'
 
-= link_to t('sessions.new_user'), new_user_path
+    = link_to t('sessions.new_user'), new_user_path, class: 'btn btn-success btn-block'
