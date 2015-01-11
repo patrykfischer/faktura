@@ -13,6 +13,15 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def show
+    respond_to do |format|
+      format.pdf do
+        render pdf: 'invoice',
+        template: 'layouts/invoice_pdf.haml'
+      end
+    end
+  end
+
   private
 
   def invoice_params
