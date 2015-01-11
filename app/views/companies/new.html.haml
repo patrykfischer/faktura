@@ -16,4 +16,5 @@
       = f.input :zip_code, label: false
       = t('companies.phone_number')
       = f.input :phone_number, label: false
-      = f.button :submit, class: 'btn btn-success'
+      = f.button :submit, class: 'btn btn-success btn-block'
+      = link_to t('return'), users_path, class: 'btn btn-danger btn-block'

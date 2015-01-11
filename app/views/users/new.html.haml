@@ -9,3 +9,4 @@
       = t('users.confirm_password')
       = p.input :password_confirmation, label: false
       = p.button :submit, t('users.new_user'), class: 'btn btn-success btn-block'
+    = link_to t('return'), users_path, class: 'btn btn-danger btn-block'

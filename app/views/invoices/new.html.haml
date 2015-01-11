@@ -15,3 +15,4 @@
       = t('invoices.buyer')
       = t.input :other_company_id, collection: companies, prompt: t('invoices.select'), label_method: :company_name, label: false
       = t.button :submit, class: 'btn btn-success btn-block'
+      = link_to t('return'), users_path, class: 'btn btn-danger btn-block'
