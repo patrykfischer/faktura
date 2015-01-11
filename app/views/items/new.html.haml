@@ -1,8 +1,17 @@
-= simple_form_for item, url: invoice_items_path do |f|
-  = f.input :name_of_service, label: t('items.name_of_service')
-  = f.input :pkwiu, label: t('items.pkwiu')
-  = f.input :qty, label: t('items.qty_new')
-  = f.input :unit, collection: Item::Unit, prompt: t('items.select_unit'), label:t('items.unit')
-  = f.input :unit_net_price, label:t('items.unit_price')
-  = f.input :vat_rate, collection: [0.08, 0.23], label:t('items.vat_rate')
-  = f.button :submit
+.container
+  .content
+    %h1= t('users.application_to_invoices')
+    = simple_form_for item, url: invoice_items_path do |f|
+      = t('items.name_of_service')
+      = f.input :name_of_service, label: false
+      = t('items.pkwiu')
+      = f.input :pkwiu, label: false
+      = t('items.qty_new')
+      = f.input :qty, label: false
+      = t('items.unit')
+      = f.input :unit, collection: Item::Unit, prompt: t('items.select_unit'), label: false
+      = t('items.unit_price')
+      = f.input :unit_net_price, label: false
+      = t('items.vat_rate')
+      = f.input :vat_rate, collection: [0.08, 0.23], label: false
+      = f.button :submit, class: 'btn btn-success btn-block'
