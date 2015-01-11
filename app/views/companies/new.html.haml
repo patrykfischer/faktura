@@ -1,9 +1,19 @@
-= simple_form_for(company) do |f|
-  = f.input :company_name, label: t('companies.name')
-  = f.input :nip, label: t('companies.nip')
-  = f.input :place_of_taxes, label: t('companies.country')
-  = f.input :city, label: t('companies.city')
-  = f.input :street, label: t('companies.street')
-  = f.input :zip_code, label: t('companies.zip_code')
-  = f.input :phone_number, label: t('companies.phone_number')
-  = f.button :submit
+.container
+  .content
+    %h1= t('users.application_to_invoices')
+    = simple_form_for(company) do |f|
+      = t('companies.name')
+      = f.input :company_name, label: false
+      = t('companies.nip')
+      = f.input :nip, label: false
+      = t('companies.country')
+      = f.input :place_of_taxes, label: false
+      = t('companies.city')
+      = f.input :city, label: false
+      = t('companies.street')
+      = f.input :street, label: false
+      = t('companies.zip_code')
+      = f.input :zip_code, label: false
+      = t('companies.phone_number')
+      = f.input :phone_number, label: false
+      = f.button :submit, class: 'btn btn-success'
