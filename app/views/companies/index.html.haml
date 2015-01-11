@@ -1,22 +1,25 @@
-%table
-  %tr
-    %th= t('companies.name')
-    %th= t('companies.nip')
-    %th= t('companies.country')
-    %th= t('companies.city')
-    %th= t('companies.street')
-    %th= t('companies.zip_code')
-    %th= t('companies.phone_number')
-  - companies.each do |company|
-    %tr
-      %td= company.company_name
-      %td= company.nip
-      %td= company.place_of_taxes
-      %td= company.city
-      %td= company.street
-      %td= company.zip_code
-      %td= company.phone_number
-      %td= link_to t('companies.edit'), edit_company_path(company.id)
+.container
+  .content.companies
+    %h1= t('users.application_to_invoices')
+    %table.table-hover
+      %tr
+        %th= t('companies.name')
+        %th= t('companies.nip')
+        %th= t('companies.country')
+        %th= t('companies.city')
+        %th= t('companies.street')
+        %th= t('companies.zip_code')
+        %th= t('companies.phone_number')
+      - companies.each do |company|
+        %tr
+          %td= company.company_name
+          %td= company.nip
+          %td= company.place_of_taxes
+          %td= company.city
+          %td= company.street
+          %td= company.zip_code
+          %td= company.phone_number
+          %td= link_to t('companies.edit'), edit_company_path(company.id), class: 'btn btn-info'
 
-= link_to t('companies.new_company'), new_company_path
-= link_to t('return'), users_path
+    = link_to t('companies.new_company'), new_company_path, class: 'btn btn-success btn-block'
+    = link_to t('return'), users_path, class: 'btn btn-danger btn-block'

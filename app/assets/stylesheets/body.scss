@@ -17,4 +17,11 @@
   form {
     text-align: center;
   }
+  td {
+    text-align: center;
+    padding: 15px;
+  }
+  &.companies {
+    width:880px;
+  }
 }
