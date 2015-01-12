@@ -30,6 +30,8 @@ pl:
     select: 'Wybierz'
     new_item_invoice: 'Nowa pozycja faktury'
     new_invoice: 'Nowa faktura'
+    show_invoice: 'Podgląd'
+    generate_pdf: 'Generowanie PDF'
   items:
     name_of_service: 'Nazwa usługi'
     pkwiu: 'PKWIU'
