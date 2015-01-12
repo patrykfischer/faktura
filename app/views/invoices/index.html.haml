@@ -11,8 +11,9 @@
           %td= invoice.number_of_invoice
           %td= invoice.own_company.company_name
           %td= invoice.other_company.company_name
-          %td= link_to t('invoices.new_item_invoice'), new_invoice_item_path(invoice.id), class: 'btn btn-info'
-          %td= link_to 'generuj pdf', invoice_path(invoice.id, format: 'pdf'), class: 'btn btn-success'
+          %td= link_to t('invoices.new_item_invoice'), new_invoice_item_path(invoice.id), class: 'btn btn-default'
+          %td= link_to t('invoices.show_invoice'), invoice_path(invoice.id), class: 'btn btn-info'
+          %td= link_to t('invoices.generate_pdf'), invoice_path(invoice.id, format: 'pdf'), class: 'btn btn-success'
 
     = link_to t('invoices.new_invoice'), new_invoice_path, class: 'btn btn-success btn-block'
     = link_to t('return'), users_path, class: 'btn btn-danger btn-block'
