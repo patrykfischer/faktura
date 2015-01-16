@@ -12,6 +12,7 @@ pl:
     edit: 'Edytuj'
     new_company: 'Nowa Firma'
     save_completed: 'Zapis udany!'
+    adres: 'Adres:'
     validation:
       nip: 'NIP powinien się składać z cyfr w formacie xxx-xxx-xx-xx'
       zip_code: 'Kod pocztowy powinien składać się z samych cyfr w formacie xx-xxx'
@@ -26,25 +27,30 @@ pl:
     date_build: 'Data wystawienia'
     method_of_payment: 'Metoda płatnosci'
     seller: 'Sprzedawca'
-    buyer: 'Kupujący'
+    buyer: 'Nabywca'
     select: 'Wybierz'
     new_item_invoice: 'Nowa pozycja faktury'
     new_invoice: 'Nowa faktura'
     show_invoice: 'Podgląd'
     generate_pdf: 'Generowanie PDF'
   items:
+    lp: 'Lp.'
     name_of_service: 'Nazwa usługi'
+    name: 'Nazwa'
     pkwiu: 'PKWIU'
     qty: 'Ilość szt.'
     qty_new: 'Ilość'
     unit: 'Jednostka'
     unit_net_price: 'Cena jednostkowa netto'
-    total_net_price: 'Całkowita cena netto'
+    total_net_price: 'Wartość netto'
     vat_rate: 'Stawka Vat'
-    vat_amount: 'Kwota Vat'
+    vat_amount: 'Wartość Vat'
     total_gross_price: 'Wartość Brutto'
     select_unit: 'Wybierz jednostkę!'
     unit_price: 'Cena jednostkowa'
+    vat_23: 'Vat 23%'
+    vat_8: 'Vat 8%'
+    summation: 'Razem'
   sessions:
     online: 'Zalogowany'
     offline: 'Wylogowano poprawnie'
@@ -71,4 +77,13 @@ pl:
       - :day
     month_names: [Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
   return: 'Powrót'
+
+  pdf:
+    time_for_pay: 'Termin zapłaty'
+    delivery: 'Dostawa'
+    paid: 'Zapłacono'
+    to_pay: 'Do zapłaty'
+    amount_in_words: 'Kwota słownie'
+    exposure: 'Osoba upoważniona do wystawienia'
+    recipient: 'Osoba upoważniona do odbioru'
 
