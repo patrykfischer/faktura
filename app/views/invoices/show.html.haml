@@ -3,26 +3,47 @@
 .container
   .content.invoices
     %h1
-      Faktura
+      = t('users.application_to_invoices')
       = invoice.number_of_invoice
-    %p
-      Data sprzedaży:
-      = invoice.data_of_sold
-    %p
-      Data wystawienia:
-      = invoice.data_build
+    %table.top
+      %tr
+        %th= t('invoices.date_of_sold')
+        %td= invoice.data_of_sold
+      %tr
+        %th= t('invoices.date_build')
+        %td= invoice.data_build
+
+    %table.seller
+      %tr
+        %th= t('invoices.seller')
+      %tr
+        %td= invoice.own_company.company_name
+      %tr
+        %td #{t('companies.adres')} #{invoice.own_company.street}, #{invoice.own_company.zip_code} #{invoice.own_company.city}
+      %tr
+        %td #{t('companies.phone_number')} #{invoice.own_company.phone_number}
+
+    %table.buyer
+      %tr
+        %th= t('invoices.buyer')
+      %tr
+        %td= invoice.other_company.company_name
+      %tr
+        %td #{t('companies.adres')} #{invoice.other_company.street}, #{invoice.other_company.zip_code} #{invoice.other_company.city}
+      %tr
+        %td #{t('companies.phone_number')} #{invoice.other_company.phone_number}
 
     %table.pdf
       %tr
-        %th Lp.
-        %th Nazwa
-        %th Ilość
-        %th Jednostka
-        %th Cena jednostkowa
-        %th Wartość Netto
-        %th Stawka VAT
-        %th Wartość VAT
-        %th Cena całkowita
+        %th= t('items.lp')
+        %th= t('items.name')
+        %th= t('items.qty_new')
+        %th= t('items.unit')
+        %th= t('items.unit_net_price')
+        %th= t('items.total_net_price')
+        %th= t('items.vat_rate')
+        %th= t('items.vat_amount')
+        %th= t('items.total_gross_price')
       - invoice.items.each do |item|
         %tr
           %td
@@ -35,15 +56,44 @@
           %td= item.vat_amount
           %td= item.total_gross_price
 
-    %table.pdf
+    %table.vat_summation
       %tr
-        %th Stawki VAT
-        %th Obrót Netto
-        %th Kwota VAT
-        %th Obród Brutto
+        %th= t('items.vat_rate')
+        %th= t('items.total_net_price')
+        %th= t('items.vat_amount')
+        %th= t('items.total_gross_price')
       %tr
-        %td Vat 23%
+        %td= t('items.vat_23')
       %tr
-        %td Vat 8%
+        %td= t('items.vat_8')
       %tr
-        %td Razem
+        %td= t('item.summation')
+
+    %table.summation
+      %tr
+        %th= t('invoices.method_of_payment')
+        %td= invoice.method_of_payment
+      %tr
+        %th= t('pdf.time_for_pay')
+        %td= invoice.data_of_sold
+      %tr
+        %th= t('pdf.delivery')
+        %td odbiór osobisty
+      %tr
+        %th= t('pdf.paid')
+        %td
+      %tr
+        %th= t('pdf.to_pay')
+        %td
+      %tr
+        %th= t('pdf.amount_in_words')
+        %td
+
+    .clr
+
+    .recipient
+      = t('pdf.recipient')
+    .exposure
+      = t('pdf.exposure')
+
+    .clr
