@@ -43,6 +43,11 @@ GEM
     database_cleaner (1.3.0)
     decent_exposure (2.3.1)
     diff-lcs (1.2.5)
+    draper (1.4.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
@@ -111,6 +116,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
+    request_store (1.1.0)
     rspec-core (3.0.2)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.2)
@@ -191,6 +197,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   decent_exposure
+  draper (~> 1.3)
   factory_girl_rails
   haml-rails
   jbuilder (~> 1.2)

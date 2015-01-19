@@ -50,6 +50,7 @@ gem "less-rails"
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'draper', '~> 1.3'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
