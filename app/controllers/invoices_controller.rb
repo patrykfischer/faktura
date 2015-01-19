@@ -2,6 +2,7 @@ class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
   expose(:companies){ @user.companies }
   expose(:invoices){ @user.invoices }
+  expose(:invoice_decorate) { invoice.decorate }
   before_action :require_login
 
   def create
