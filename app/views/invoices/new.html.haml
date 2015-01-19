@@ -2,8 +2,6 @@
   .content.invoices-new
     %h1= t('users.application_to_invoices')
     = simple_form_for invoice do |t|
-      = t('invoices.number_of_invoice')
-      = t.input :number_of_invoice, label: false
       = t('invoices.date_of_sold')
       = t.input :data_of_sold, label: false
       = t('invoices.date_build')
