@@ -33,6 +33,8 @@
       %tr
         %td #{t('companies.phone_number')} #{invoice.other_company.phone_number}
 
+    .clr
+
     %table.pdf
       %tr
         %th= t('items.lp')
@@ -48,13 +50,13 @@
         %tr
           %td
           %td= item.name_of_service
-          %td= item.qty
-          %td= item.unit
-          %td= item.unit_net_price
-          %td= item.total_net_price
+          %td= number_to_currency(item.qty)
+          %td= number_to_currency(item.unit)
+          %td= number_to_currency(item.unit_net_price)
+          %td= number_to_currency(item.total_net_price)
           %td= item.vat_rate
-          %td= item.vat_amount
-          %td= item.total_gross_price
+          %td= number_to_currency(item.vat_amount)
+          %td= number_to_currency(item.total_gross_price)
 
     %table.vat_summation
       %tr
@@ -64,10 +66,19 @@
         %th= t('items.total_gross_price')
       %tr
         %td= t('items.vat_23')
+        %td= invoice_decorate.net_price_23
+        %td= invoice_decorate.net_price_8
+        %td= invoice_decorate.summation_net
       %tr
         %td= t('items.vat_8')
+        %td= invoice_decorate.vat_rate_23
+        %td= invoice_decorate.vat_rate_8
+        %td= invoice_decorate.summation_vat
       %tr
         %td= t('item.summation')
+        %td= invoice_decorate.price_total_23
+        %td= invoice_decorate.price_total_8
+        %td= invoice_decorate.summation_total
 
     %table.summation
       %tr
