@@ -66,19 +66,19 @@
         %th= t('items.total_gross_price')
       %tr
         %td= t('items.vat_23')
-        %td= invoice_decorate.net_price_23
-        %td= invoice_decorate.vat_rate_23
-        %td= invoice_decorate.summation_net
+        %td= number_to_currency(invoice_decorate.net_price_23)
+        %td= number_to_currency(invoice_decorate.vat_rate_23)
+        %td= number_to_currency(invoice_decorate.summation_net)
       %tr
         %td= t('items.vat_8')
-        %td= invoice_decorate.net_price_8
-        %td= invoice_decorate.vat_rate_8
-        %td= invoice_decorate.summation_vat
+        %td= number_to_currency(invoice_decorate.net_price_8)
+        %td= number_to_currency(invoice_decorate.vat_rate_8)
+        %td= number_to_currency(invoice_decorate.summation_vat)
       %tr
         %td= t('item.summation')
-        %td= invoice_decorate.price_total_23
-        %td= invoice_decorate.price_total_8
-        %td= invoice_decorate.summation_total
+        %td= number_to_currency(invoice_decorate.price_total_23)
+        %td= number_to_currency(invoice_decorate.price_total_8)
+        %td= number_to_currency(invoice_decorate.summation_total)
 
     %table.summation
       %tr
