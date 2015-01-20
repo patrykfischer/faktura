@@ -51,7 +51,7 @@
           %td
           %td= item.name_of_service
           %td= number_to_currency(item.qty)
-          %td= number_to_currency(item.unit)
+          %td= item.unit
           %td= number_to_currency(item.unit_net_price)
           %td= number_to_currency(item.total_net_price)
           %td= item.vat_rate
@@ -67,11 +67,11 @@
       %tr
         %td= t('items.vat_23')
         %td= invoice_decorate.net_price_23
-        %td= invoice_decorate.net_price_8
+        %td= invoice_decorate.vat_rate_23
         %td= invoice_decorate.summation_net
       %tr
         %td= t('items.vat_8')
-        %td= invoice_decorate.vat_rate_23
+        %td= invoice_decorate.net_price_8
         %td= invoice_decorate.vat_rate_8
         %td= invoice_decorate.summation_vat
       %tr
