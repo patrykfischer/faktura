@@ -33,6 +33,7 @@ pl:
     new_invoice: 'Nowa faktura'
     show_invoice: 'Podgląd'
     generate_pdf: 'Generowanie PDF'
+    paid: 'Zaznacz jeśli faktura jest zapłacona'
   items:
     lp: 'Lp.'
     name_of_service: 'Nazwa usługi'
