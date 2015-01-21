@@ -28,7 +28,7 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:data_of_sold, :data_build, :method_of_payment, :own_company_id, :other_company_id)
+    params.require(:invoice).permit(:data_of_sold, :data_build, :method_of_payment, :own_company_id, :other_company_id, :paid)
   end
 
   def set_number_invoice
