@@ -1,4 +1,6 @@
 class InvoiceDecorator < Draper::Decorator
+  require 'polish_number'
+
   delegate_all
 
   def net_price_8
@@ -47,6 +49,18 @@ class InvoiceDecorator < Draper::Decorator
 
   def summation_total
     summation_vat + summation_net
+  end
+
+  def polish_number_world
+    PolishNumber.translate(to_pay, currency: :PLN)
+  end
+
+  def paid
+    invoice.paid ? summation_total : 0
+  end
+
+  def to_pay
+    invoice.paid ? 0 : summation_total
   end
 
   private
