@@ -88,3 +88,13 @@ pl:
     exposure: 'Osoba upoważniona do wystawienia'
     recipient: 'Osoba upoważniona do odbioru'
 
+  number:
+    format:
+      separator: ","
+      delimiter: " "
+      precision: 2
+    currency:
+      format:
+        format: "%n %u"
+        unit: "PLN"
+

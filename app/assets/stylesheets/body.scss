@@ -19,7 +19,9 @@
   }
   td {
     text-align: center;
-    padding: 15px;
+    padding: 2px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   &.companies {
     width: 880px;
@@ -42,11 +44,13 @@
   table, tr, td {
     border: 1px solid #dddddd;
   }
+  font-size: 14px;
 }
 
 .vat_summation {
+  font-size: 12px;
   float: left;
-  width: 400px;
+  width: 440px;
   margin-top: 50px;
   table, tr, td {
     border: 1px solid #dddddd;
