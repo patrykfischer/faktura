@@ -92,13 +92,13 @@
         %td odbiór osobisty
       %tr
         %th= t('pdf.paid')
-        %td
+        %td= invoice_decorate.paid
       %tr
         %th= t('pdf.to_pay')
-        %td
+        %td= invoice_decorate.to_pay
       %tr
         %th= t('pdf.amount_in_words')
-        %td
+        %td.value_word= invoice_decorate.polish_number_world
 
     .clr
 
